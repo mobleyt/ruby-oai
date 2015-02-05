@@ -70,6 +70,14 @@ module OAI::Provider
       xml.target!
     end
     
+    # output an empty xml resumption token
+    def to_empty_xml
+      xml = Builder::XmlMarkup.new
+      xml.resumptionToken('')
+      xml.target!
+    end
+
+    
     # return a hash containing just the model selection parameters
     def to_conditions_hash
       conditions = {:metadata_prefix => self.prefix }
