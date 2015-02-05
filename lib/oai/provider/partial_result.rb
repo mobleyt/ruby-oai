@@ -6,11 +6,12 @@ module OAI::Provider
   # records, and a resumption token for getting the next set/page.
   #
   class PartialResult
-    attr_reader :records, :token
+    attr_reader :records, :token, :end_token
     
-    def initialize(records, token = nil)
+    def initialize(records, token = nil, end_token = nil)
       @records = records
       @token = token
+      @end_token = end_token
     end
     
   end
