@@ -21,7 +21,9 @@ module OAI::Provider::Response
           end
 
           # append resumption token for getting next group of records
-          if result.respond_to?(:token)
+          if result.respond_to?(:token) && result.end_token
+            r.target! << result.end_token.to_empty_xml
+          else
             r.target! << result.token.to_xml
           end
 
