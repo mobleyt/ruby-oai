@@ -4,7 +4,7 @@ module OAI::Provider::Metadata
   class DublinCore < Format
 
     def initialize
-      @prefix = 'oai_dc'
+      @prefix = 'qdc'
       @schema = 'http://www.openarchives.org/OAI/2.0/oai_dc.xsd'
       @namespace = 'http://www.openarchives.org/OAI/2.0/oai_dc/'
       @element_namespace = 'dc'
